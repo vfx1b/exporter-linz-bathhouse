@@ -1,0 +1,1 @@
+pack build exporter-linz-bathhouse --path . --builder paketobuildpacks/builder:base
