@@ -1,1 +1,1 @@
-pack build exporter-linz-bathhouse --path . --builder paketobuildpacks/builder:base
+pack build ghcr.io/vfx1b/exporter-linz-bathhouse --path . --builder paketobuildpacks/builder:base
