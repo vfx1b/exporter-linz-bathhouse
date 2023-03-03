@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
-	"strconv"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -47,7 +47,7 @@ var (
 func fetchMetrics() *[]Payload {
 	payloadResponse := []Payload{}
 	for _, location := range locations {
-		req, err := http.NewRequest(http.MethodGet, apiUrl+strconv.Itoa(int(location.ServerSideId)), nil)
+		req, err := http.NewRequest(http.MethodGet, fmt.Sprintf("%s%d", apiUrl, location.ServerSideId), nil)
 		if err != nil {
 			log.Error(err)
 			return nil
