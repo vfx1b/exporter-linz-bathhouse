@@ -10,23 +10,20 @@ import (
 )
 
 var (
-	locations []Location
-	apiUrl    = "https://www.linzag.at/RESTfulBaths/rest/utilisation/"
-)
+	apiUrl = "https://www.linzag.at/RESTfulBaths/rest/utilisation/"
 
-// locations can be regenrated with this script on the website of the city
-// let elements = document.getElementsByClassName("lag-workload-teaser-text");
-// let output = "";
-//
-//	for (let i = 0; i < elements.length; i++) {
-//		let e = elements[i];
-//		let elementIdStr = e.id;
-//		let serverSideId = elementIdStr.split("-")[1];
-//		output += "{ServerSideId: " + parseInt(serverSideId) + " , Name: \"" + e.innerText + "\"},\n"
-//	}
-//
-// console.log(output);
-func init() {
+	// locations can be regenrated with this script on the website of the city
+	// let elements = document.getElementsByClassName("lag-workload-teaser-text");
+	// let output = "";
+	//
+	//	for (let i = 0; i < elements.length; i++) {
+	//		let e = elements[i];
+	//		let elementIdStr = e.id;
+	//		let serverSideId = elementIdStr.split("-")[1];
+	//		output += "{ServerSideId: " + parseInt(serverSideId) + " , Name: \"" + e.innerText + "\"},\n"
+	//	}
+	//
+	// console.log(output);
 	locations = []Location{
 		{ServerSideId: 10, Name: "Parkbad Eisbetrieb"},
 		{ServerSideId: 3, Name: "Parkbad Hallenbad"},
@@ -45,7 +42,7 @@ func init() {
 		{ServerSideId: 4, Name: "Ebelsberg Sauna"},
 		{ServerSideId: 15, Name: "Ebelsberg Freieis"},
 	}
-}
+)
 
 func fetchMetrics() *[]Payload {
 	payloadResponse := []Payload{}
